@@ -1,0 +1,1 @@
+import{a as e}from"./index-4UOSQhIM.js";const p={ping:{type:"object",properties:{url:{type:"string"}}},local:{type:"object",properties:{}}},a={async ping({url:t}){e(t,"url required"),e(t.startsWith("http"),"url must start with http");const o=Date.now(),r=await fetch(t);return console.log(r),Date.now()-o},local(){return"local reply"}};export{p as api,a as functions};
