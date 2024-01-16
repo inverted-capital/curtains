@@ -62,7 +62,7 @@ export default class Artifact {
     })
     await git.init({ ...this.#opts, defaultBranch })
     await this.#fs.mkdir(this.#dir + '/helps')
-    const helps = ['goalie', 'ping.fixture', 'curtains']
+    const helps = ['goalie', 'help.fixture', 'curtains']
     await Promise.all(
       helps.map(async (slug) => {
         const name = '/helps/' + slug + '.js'
@@ -178,10 +178,14 @@ export default class Artifact {
     this.#trigger.commit(this.#dir, hash)
   }
   async write(path, file) {
-    debug('write', path)
     assert(posix.isAbsolute(path), `path must be absolute: ${path}`)
     const absolute = posix.normalize(this.#dir + path)
     await this.#fs.writeFile(absolute, file)
     this.#trigger.write(absolute, file)
+  }
+  async stat(path) {
+    assert(posix.isAbsolute(path), `path must be absolute: ${path}`)
+    const absolute = posix.normalize(this.#dir + path)
+    return await this.#fs.stat(absolute)
   }
 }
