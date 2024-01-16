@@ -1,0 +1,1 @@
+import{D as t}from"./index-Vbc41Y7b.js";const n=t("AI:engage-help"),p={engage:{description:"engage the help",type:"object",properties:{helpPath:{description:"the path to the help",type:"string"}}}},o={engage:async({help:e})=>(n("engage",e),"testing")};export{p as api,o as functions};
