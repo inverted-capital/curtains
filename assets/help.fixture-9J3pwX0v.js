@@ -1,8 +1,8 @@
 const n=`export default {
   config: {},
   runner: {},
-  commands: ['/ping.io.json:local'],
-  instructions: ['your only function is to call the ping command'],
+  commands: ['io.fixture:local'],
+  instructions: ['your only function is to call the local command and die'],
   done: '',
   examples: [],
   tests: [],
